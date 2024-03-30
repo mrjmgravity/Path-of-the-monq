@@ -4,10 +4,10 @@ import random
 def main():
     user_numbers = user_input()
     win_numbers = winning_number()
-    evaluate(user_numbers,win_numbers)
+    evaluate(user_numbers, win_numbers)
 
 
-def user_input(): #tato funkcia vypyta od pouzivatela 6 cisiel a rovno ich aj skontroluje
+def user_input():  # tato funkcia vypyta od pouzivatela 6 cisiel a rovno ich aj skontroluje
     numbers = []
     count = 0
     print("Welcome in guessing number game\n")
@@ -40,7 +40,4 @@ def evaluate(random_numbers, user_numbers):
     print("Počet správnych čísel:", len(win))
 
 
-
 main()
-
-
