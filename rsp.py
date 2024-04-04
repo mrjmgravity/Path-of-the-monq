@@ -1,17 +1,14 @@
 def main(rounds):
     score1 = 0
-    while True:
-        for i in range(rounds):
-            print(f"round:{i+1}")
+    for i in range(rounds):
+        print(f"round:{i+1}")
+        p1_input = (input("Enter symbol 1: ")).lower()
+        while not is_input_valid(p1_input):
             p1_input = (input("Enter symbol 1: ")).lower()
+        p2_input = (input("Enter symbol 2: ")).lower()
+        while not is_input_valid(p2_input):
             p2_input = (input("Enter symbol 2: ")).lower()
-            invalid_input_check = check_input(p1_input, p2_input)
-            if invalid_input_check:
-                print(invalid_input_check)
-                break
-            score1 += evaluate_round(p1_input, p2_input)
-        else:
-            break
+
     final_evaluation(score1)
 
 
@@ -33,12 +30,12 @@ def final_evaluation(score1):
         print("Its a Tie!")
 
 
-def check_input(p1, p2):
+def is_input_valid(p):
     valid_inputs = ["r", "s", "p"]
-    if p1 not in valid_inputs or p2 not in valid_inputs:
-        return "Not valid input, please make sure both inputs are 'r', 's', or 'p'"
+    if p not in valid_inputs:
+        return False
     else:
-        return None
+        return True
 
 
 main(3)
